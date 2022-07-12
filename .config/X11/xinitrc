@@ -1,7 +1,16 @@
+wallpapers=($HOME/$USER/Pictures/wallpapers/*)
+random_wallpaper=${wallpapers[$(( $RANDOM % ${#wallpapers[@]}))]}
+
+# Load xresources
 [[ -f "$XDG_CONFIG_HOME/X11/xresources" ]] && xrdb -merge "$XDG_CONFIG_HOME/X11/xresources"
 
-feh --bg-max --randomize --no-fehbg "$HOME"/Pictures/wallpapers/* &
+# Generate xresources based on wallpaper
+wal -i "$random_wallpaper"
+# Set background
+feh --bg-max --no-fehbg "$random_wallpaper" &
 
+# Load compositor
 picom --experimental-backends -b >/dev/null 2>&1
 
+# Start DWM
 exec dwm 2> /tmp/dwm.log
