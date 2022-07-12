@@ -1,4 +1,4 @@
-[[ -f "$XDG_CONFIG_HOME/X11/xresources" ]] && xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
+[[ -f "$XDG_CONFIG_HOME/X11/xresources" ]] && xrdb -merge "$XDG_CONFIG_HOME/X11/xresources"
 
 feh --bg-max --randomize "$HOME"/Pictures/wallpapers/* &
 
