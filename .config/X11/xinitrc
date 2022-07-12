@@ -1,4 +1,4 @@
-wallpapers=($HOME/$USER/Pictures/wallpapers/*)
+wallpapers=($HOME/Pictures/wallpapers/*)
 random_wallpaper=${wallpapers[$(( $RANDOM % ${#wallpapers[@]}))]}
 
 # Load xresources
