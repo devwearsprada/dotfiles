@@ -1,7 +1,7 @@
-xrbd -load "$XDG_CONFIG_HOME/X11/xresources"
+[[ -f "$XDG_CONFIG_HOME/X11/xresources" ]] && xrbd -load "$XDG_CONFIG_HOME/X11/xresources"
 
 feh --bg-max --randomize "$HOME"/Pictures/wallpapers/* &
 
-picom --experimental-backends -b >/dev/null 2>&1 || { echo "no picom available"; sleep 2 }
+picom --experimental-backends -b >/dev/null 2>&1
 
 exec dwm 2> /tmp/dwm.log
