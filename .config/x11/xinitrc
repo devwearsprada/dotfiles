@@ -1,3 +1,3 @@
-feh --bg-max --randomize "$HOME/Pictures/wallpapers/*" &
+feh --bg-max --randomize "$HOME"/Pictures/wallpapers/* &
 
 exec dwm 2> /tmp/dwm.log
